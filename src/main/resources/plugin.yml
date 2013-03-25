@@ -1,0 +1,8 @@
+name: ClickMe
+main: net.digiex.clickme
+version: 1.0
+author: xzKinGzxBuRnzx
+permissions:
+  clickme.console:
+    description: Allows sign based commands as console.
+    default: op
