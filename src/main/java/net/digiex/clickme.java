@@ -2,7 +2,6 @@ package net.digiex;
 
 import java.util.logging.Logger;
 
-import org.bukkit.block.Block;
 import org.bukkit.block.BlockState;
 import org.bukkit.block.Sign;
 import org.bukkit.entity.Player;
@@ -49,13 +48,13 @@ public class clickme extends JavaPlugin {
 		@EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
 		public void onPlayerInteract(PlayerInteractEvent event) {
 			if ((event.getAction() == Action.RIGHT_CLICK_BLOCK)
-					|| ((event.getAction() == Action.LEFT_CLICK_BLOCK) && (has(event
-							.getPlayer())))) {
+					|| ((event.getAction() == Action.LEFT_CLICK_BLOCK))) {
 				BlockState state = event.getClickedBlock().getState();
 				Player player = event.getPlayer();
 				if ((state instanceof Sign)) {
 					Sign sign = (Sign) state;
 					if (sign.getLines()[0].equalsIgnoreCase("[ClickMe]")) {
+						if (has(event.getPlayer())) {
 						if (sign.getLines()[1].equalsIgnoreCase("console")) {
 							if (hasConsole(player))
 								getServer()
@@ -72,6 +71,9 @@ public class clickme extends JavaPlugin {
 									sign.getLines()[1].toString()
 											+ sign.getLines()[2].toString()
 											+ sign.getLines()[3].toString());
+					}
+					} else {
+						player.sendMessage("You don't have the required permissions for this...");
 					}
 
 				}
