@@ -71,9 +71,9 @@ public class clickme extends JavaPlugin {
 									sign.getLines()[1].toString()
 											+ sign.getLines()[2].toString()
 											+ sign.getLines()[3].toString());
-					}
 					} else {
 						player.sendMessage("You don't have the required permissions for this...");
+					}
 					}
 
 				}
