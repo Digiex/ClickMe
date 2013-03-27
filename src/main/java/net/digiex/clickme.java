@@ -36,11 +36,11 @@ public class clickme extends JavaPlugin {
 	}
 
 	public boolean has(Player player) {
-		return player.hasPermission("clickme.console");
+		return player.hasPermission("clickme.player");
 	}
 
 	public boolean hasConsole(Player player) {
-		return player.hasPermission("clickme.player");
+		return player.hasPermission("clickme.console");
 	}
 
 	private class cmListener implements Listener {
