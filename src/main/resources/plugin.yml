@@ -1,5 +1,5 @@
 name: ClickMe
-main: net.digiex.clickme
+main: net.digiex.clickme.ClickMe
 version: 1.0
 author: xzKinGzxBuRnzx
 permissions:
