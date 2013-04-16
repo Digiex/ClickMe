@@ -15,7 +15,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class ClickMe extends JavaPlugin {
 
     private Logger log;
-    private Listener clickmelistener = new cmListener();
 
     @Override
     public void onDisable() {
@@ -25,7 +24,7 @@ public class ClickMe extends JavaPlugin {
     @Override
     public void onEnable() {
         log = getLogger();
-        getServer().getPluginManager().registerEvents(clickmelistener, this);
+        getServer().getPluginManager().registerEvents(new cmListener(), this);
         log.info("is now enabled!");
     }
 
